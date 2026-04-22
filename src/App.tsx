@@ -1,42 +1,31 @@
-import React from 'react';
+import { Suspense, lazy } from 'react';
 import './App.css';
 import store from './store';
 import { Provider } from 'react-redux';
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Component/Home';
-import Layout from './Layout';
-import About from './Component/About/About';
-import Faq from './Component/Faq/Faq';
-import PortFolio from './Component/PortFolio/PortFolio';
+import { ThemeProvider } from './portfolio/theme/ThemeContext';
+
+const Portfolio = lazy(() => import('./portfolio/Portfolio'));
+const ProjectsPage = lazy(() => import('./portfolio/pages/ProjectsPage'));
+const ProjectDetailPage = lazy(() => import('./portfolio/pages/ProjectDetailPage'));
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="faq" element={<Faq />} />
-              <Route path="portfolio" element={<PortFolio />} />
-            </Route>
-          </Routes>
-        </Router>
-
-        {/* <SearchApi /> */}
-        {/* <LifeCycle /> */}
-        {/* <Javascript /> */}
-        {/* <TestPromise /> */}
-        {/* <ExecutionContext /> */}
-        {/* <CompA /> */}
-        {/* <ReduxConc /> */}
-        {/* <TodoList /> */}
-        {/* <UseRef /> */}
-        {/* <GetGithubUser /> */}
-
-      </div>
+      <ThemeProvider>
+        <div className="App">
+          <Router>
+            <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
+              <Routes>
+                <Route path="/" element={<Portfolio />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+                <Route path="*" element={<Portfolio />} />
+              </Routes>
+            </Suspense>
+          </Router>
+        </div>
+      </ThemeProvider>
     </Provider>
   );
 }
