@@ -43,7 +43,9 @@ const Hero: React.FC = () => {
             <br />I build fast, accessible web experiences.
           </h1>
           <p className="pf-hero__desc">
-            {PROFILE.tagline}. Specializing in React, JavaScript, Magento, and Shopify — with a decade of shipping production-grade interfaces.
+            {PROFILE.tagline}. 
+            
+            Specializing in React, JavaScript, Magento, and Shopify — with a decade of shipping production-grade interfaces.
           </p>
 
           <div className="pf-hero__cta">
@@ -61,7 +63,7 @@ const Hero: React.FC = () => {
           className="pf-reveal pf-reveal--delay-2 pf-hero__visual"
           aria-hidden="true"
         >
-          <span className="pf-floating-pill pf-floating-pill--a">
+          {/* <span className="pf-floating-pill pf-floating-pill--a">
             <span className="dot" /> React
           </span>
           <span className="pf-floating-pill pf-floating-pill--b">
@@ -69,7 +71,7 @@ const Hero: React.FC = () => {
           </span>
           <span className="pf-floating-pill pf-floating-pill--c">
             <span className="dot" /> Magento
-          </span>
+          </span> */}
           <div className="pf-hero__card" data-initials={initials}>
             <header>
               <span /><span /><span />
@@ -86,7 +88,7 @@ const Hero: React.FC = () => {
               <span className="prop">role</span>: <span className="str">"Senior Frontend"</span>,
             </div>
             <div className="pf-hero__card-line">
-              <span className="prop">yearsOfExp</span>: <span className="num">10</span>,
+              <span className="prop">yearsOfExp</span>: <span className="num">11</span>,
             </div>
             <div className="pf-hero__card-line">
               <span className="prop">stack</span>: [<span className="str">"React"</span>, <span className="str">"TS"</span>,

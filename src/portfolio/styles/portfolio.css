@@ -171,7 +171,6 @@ html {
 }
 
 .pf-section-head {
-  max-width: 640px;
   margin-bottom: 3rem;
 }
 
@@ -192,6 +191,8 @@ html {
 
 .pf-section-title {
   font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .pf-section-sub {
@@ -1872,14 +1873,12 @@ html {
 
 .pf-testimonial {
   position: relative;
-  padding: 1.75rem 1.5rem 1.5rem;
+  padding: 3rem 1.5rem 1.5rem;
   background: var(--pf-surface);
   border: 1px solid var(--pf-border);
   border-radius: var(--pf-radius-lg);
   margin: 0;
-  transition: border-color var(--pf-dur) var(--pf-ease),
-    box-shadow var(--pf-dur) var(--pf-ease),
-    transform var(--pf-dur) var(--pf-ease);
+  transition: 0.3s all !important;
 }
 
 .pf-testimonial:hover {
@@ -1908,18 +1907,19 @@ html {
   color: var(--pf-accent);
   margin-bottom: 0.9rem;
 }
-
+.pf-testimonial__body {
+  margin: 0 !important;
+}
 .pf-testimonial__body p {
   font-size: 0.98rem;
-  line-height: 1.65;
+  line-height: 1.9;
   color: var(--pf-text);
   margin: 0;
 }
 
 .pf-testimonial__divider {
   border: 0;
-  border-top: 1px solid var(--pf-border);
-  margin: 1.25rem 0 1rem;
+  margin: 0.25rem 0 1rem;
 }
 
 .pf-testimonial__person {
@@ -1943,6 +1943,7 @@ html {
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
+  overflow: hidden;
 }
 
 .pf-testimonial__name {
@@ -1968,6 +1969,14 @@ html {
   border-radius: var(--pf-radius-pill);
   white-space: nowrap;
   flex-shrink: 0;
+}
+.pf-read-toggle {
+  background: transparent;
+  border: navajowhite;
+  color: #5252b4;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -2579,7 +2588,6 @@ html {
 .pf-detail-block p {
   font-size: 1.02rem;
   line-height: 1.75;
-  max-width: 65ch;
 }
 
 .pf-detail-list {

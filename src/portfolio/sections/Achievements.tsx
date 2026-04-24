@@ -64,9 +64,9 @@ const ACHIEVEMENTS: Achievement[] = [
   },
   {
     icon: <AwardIcon />,
-    title: "10+ Years",
+    title: "11 Years",
     subtitle: "Professional experience",
-    badge: "Since 2013",
+    badge: "Since 2015",
   },
 ];
 

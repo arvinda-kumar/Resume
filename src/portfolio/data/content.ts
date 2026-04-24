@@ -1,3 +1,8 @@
+import shivam from '../../assets/imgs/shivam.jpg';
+import anamika from '../../assets/imgs/anamika.jpg';
+import manpreet from '../../assets/imgs/mapreet.jpg';
+import vikas from '../../assets/imgs/vikas.jpg';
+
 export interface SkillItem {
   name: string;
   level: number;
@@ -26,7 +31,28 @@ export interface Project {
   demo?: string;
   code?: string;
   thumbnail?: string;
+  
+  // userStory: string;
+  // heading?: string;
+  // userStories?: string[];
+  // section?: string;
+  // description1: string;
+  // criteria: string
+  // criteriaList?: string[];
+  userStory: UserStory;
 }
+
+type UserStoryItem = {
+  section: string;
+  description1: string;
+  criteria: string;
+  criteriaList: string[];
+};
+
+type UserStory = {
+  heading: string;
+  userStories: UserStoryItem[];
+};
 
 export interface Experience {
   role: string;
@@ -47,14 +73,15 @@ export interface Testimonial {
   role: string;
   initials: string;
   location: string;
+  imageUrl: string;
 }
 
 export const PROFILE = {
   name: "Arvinda Kumar",
   title: "Senior Frontend Developer",
-  tagline: "10+ years building performant, accessible web experiences",
+  tagline: "11 years building performant, accessible web experiences",
   intro:
-    "I'm a senior frontend developer with a decade of experience building polished, production-grade interfaces. I specialize in React, JavaScript, and modern e-commerce platforms like Magento and Shopify — turning complex requirements into fast, accessible, and maintainable UIs.",
+    "I'm a senior frontend developer with a decade of experience building polished, production-grade interfaces. I specialize in React, JavaScript(ES6), TypeScript, and modern e-commerce platforms like Magento and Shopify — turning complex requirements into fast, accessible, and maintainable UIs.",
   email: "arvinda.dev@example.com",
   phone: "+91 98765 43210",
   location: "India · Remote",
@@ -63,8 +90,8 @@ export const PROFILE = {
   resumeUrl: "/resume.pdf",
   stats: [
     { num: "10+", label: "Years of experience" },
-    { num: "60+", label: "Projects shipped" },
-    { num: "25+", label: "Happy clients" },
+    { num: "50+", label: "Projects shipped" },
+    { num: "50+", label: "Happy clients" },
   ],
 };
 
@@ -132,21 +159,22 @@ export const STACK_TAGS = [
 export const PROJECTS: Project[] = [
   {
     slug: "headless-shopify-storefront",
-    title: "Headless Shopify Storefront",
+    title: "CedCommerce TikTok Shop",
     initials: "HS",
     year: "2024",
     role: "Lead Frontend Engineer",
     client: "DTC fashion brand",
     category: "E-commerce",
     summary:
-      "Custom Hydrogen storefront with a React component library, SSR, and 40% faster LCP.",
+      "Designed for TikTok Shop, this Integration automates your workflow to simplify product listing, inventory syncing, and order fulfillment.",
     description:
-      "Rebuilt a legacy Shopify Online Store 2.0 experience as a fully headless storefront on Shopify Hydrogen + Remix. Designed the component architecture, integrated the Storefront API, and shipped a tokenized design system used by three marketing teams.",
+      "Designed for TikTok Shop, this Integration automates your workflow to simplify product listing, inventory syncing, and order fulfillment. The integration improves operational efficiency with centralized listing ,order, inventory, & return/refund management. Optimize operations with features like pricing and inventory rules to avoid stockouts, meta-attributes for enhanced product details, and bundle product order management. Benefit from 24/7 expert support to keep your store running seamlessly.",
     features: [
-      "Server-side rendered product and collection pages",
-      "Customer account area with order history and wishlists",
-      "A/B-testable hero and merchandising blocks",
-      "Edge-cached GraphQL queries with stale-while-revalidate",
+      "Automated Operations: Assign Categories, bulk edit, upload and optimize products.",
+      "Auto-Order sync: Process orders & Fulfillments for TikTok Shop including Samples.",
+      "Protect Revenue: Auto-prevent over/under selling with inventory & price rules.",
+      "Advanced Selling: Image optimization, bundle Product orders, and meta-attributes.",
+      "Managed Services: Dedicated experts for quick and seamless TikTok Shop selling."
     ],
     challenges: [
       "Mapping an existing Liquid theme to a React component tree without losing SEO equity",
@@ -157,11 +185,45 @@ export const PROJECTS: Project[] = [
       "18% lift in mobile conversion after 6 weeks",
       "Reduced theme-editor ticket volume by 60%",
     ],
-    stack: ["React", "Hydrogen", "TypeScript", "GraphQL", "Tailwind"],
-    demo: "#",
-    code: "https://github.com/arkumar3c",
+    stack: ["React", "HTML","CSS", "TypeScript", "OUNCE"],
+    demo: "https://apps.shopify.com/cedcommerce-tiktok-shop",
+    code: "https://github.com/",
     thumbnail:
       "https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=80&auto=format&fit=crop",
+      
+    userStory : {
+        heading: 'UI Development User Stories',
+        userStories: [
+          {
+            section: 'Onboarding UI',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+          {
+            section: 'Onboarding UI1',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+        ],
+      }
   },
   {
     slug: "magento-2-theme-rebuild",
@@ -194,6 +256,39 @@ export const PROJECTS: Project[] = [
     demo: "#",
     thumbnail:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop",
+      userStory : {
+        heading: 'UI Development User Stories',
+        userStories: [
+          {
+            section: 'Onboarding UI',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+          {
+            section: 'Onboarding UI1',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+        ],
+      }
   },
   {
     slug: "saas-analytics-dashboard",
@@ -227,6 +322,39 @@ export const PROJECTS: Project[] = [
     code: "https://github.com/arkumar3c",
     thumbnail:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop",
+      userStory : {
+        heading: 'UI Development User Stories',
+        userStories: [
+          {
+            section: 'Onboarding UI',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+          {
+            section: 'Onboarding UI1',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+        ],
+      }
   },
   {
     slug: "design-system-component-library",
@@ -259,6 +387,39 @@ export const PROJECTS: Project[] = [
     code: "https://github.com/arkumar3c",
     thumbnail:
       "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900&q=80&auto=format&fit=crop",
+      userStory : {
+        heading: 'UI Development User Stories',
+        userStories: [
+          {
+            section: 'Onboarding UI',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+          {
+            section: 'Onboarding UI1',
+            description1:
+              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Page + Card + FormLayout',
+              'Step-based UI (Stepper / Progress indicator)',
+              'Clear CTA buttons (Primary / Secondary)',
+              'Inline validation with error messages',
+              'Loading state during API calls (Spinner / Skeleton)',
+              'Success & error banners (Polaris Banner component)',
+            ],
+          },
+        ],
+      }
   },
   {
     slug: "ecommerce-pwa",
@@ -289,6 +450,39 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js", "React", "Stripe", "Workbox", "TypeScript"],
     demo: "#",
+    userStory : {
+      heading: 'UI Development User Stories',
+      userStories: [
+        {
+          section: 'Onboarding UI',
+          description1:
+            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+          criteria: 'UI Acceptance Criteria',
+          criteriaList: [
+            'Use Polaris Page + Card + FormLayout',
+            'Step-based UI (Stepper / Progress indicator)',
+            'Clear CTA buttons (Primary / Secondary)',
+            'Inline validation with error messages',
+            'Loading state during API calls (Spinner / Skeleton)',
+            'Success & error banners (Polaris Banner component)',
+          ],
+        },
+        {
+          section: 'Onboarding UI1',
+          description1:
+            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+          criteria: 'UI Acceptance Criteria',
+          criteriaList: [
+            'Use Polaris Page + Card + FormLayout',
+            'Step-based UI (Stepper / Progress indicator)',
+            'Clear CTA buttons (Primary / Secondary)',
+            'Inline validation with error messages',
+            'Loading state during API calls (Spinner / Skeleton)',
+            'Success & error banners (Polaris Banner component)',
+          ],
+        },
+      ],
+    }
   },
   {
     slug: "marketing-site-platform",
@@ -320,6 +514,39 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "Sanity", "TypeScript", "Tailwind"],
     demo: "#",
     code: "https://github.com/arkumar3c",
+    userStory : {
+      heading: 'UI Development User Stories',
+      userStories: [
+        {
+          section: 'Onboarding UI',
+          description1:
+            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+          criteria: 'UI Acceptance Criteria',
+          criteriaList: [
+            'Use Polaris Page + Card + FormLayout',
+            'Step-based UI (Stepper / Progress indicator)',
+            'Clear CTA buttons (Primary / Secondary)',
+            'Inline validation with error messages',
+            'Loading state during API calls (Spinner / Skeleton)',
+            'Success & error banners (Polaris Banner component)',
+          ],
+        },
+        {
+          section: 'Onboarding UI1',
+          description1:
+            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+          criteria: 'UI Acceptance Criteria',
+          criteriaList: [
+            'Use Polaris Page + Card + FormLayout',
+            'Step-based UI (Stepper / Progress indicator)',
+            'Clear CTA buttons (Primary / Secondary)',
+            'Inline validation with error messages',
+            'Loading state during API calls (Spinner / Skeleton)',
+            'Success & error banners (Polaris Banner component)',
+          ],
+        },
+      ],
+    }
   },
 ];
 
@@ -337,44 +564,42 @@ export const getAdjacentProjects = (slug: string) => {
 
 export const EXPERIENCE: Experience[] = [
   {
-    role: "Senior Frontend Developer",
-    company: "Threecolts",
-    period: "2022 — Present",
+    role: "Lead UI Developer",
+    company: "Threecolts India Private Limited",
+    period: "2024 — Present",
     achievements: [
-      "Led frontend architecture for multi-tenant e-commerce tooling used by 10k+ sellers.",
-      "Shipped a shared React + TypeScript design system adopted across 5 product teams.",
-      "Cut time-to-interactive by 45% through route-based code splitting and image optimization.",
+      "Led UI/UX design and front-end development for apps like Shein, Etsy, UNICON, BWP Meta, and TikTok integrations using React, HTML, and design systems such as Shopify Polaris and OUNCE. Collaborated cross-functionally to align design solutions with user needs, ensuring a seamless and intuitive user experience.",
+      "Define frontend architecture, design patterns, and coding guidelines for React applications.",
+      "Architect scalable, secure, and resilient web applications using micro-frontend and modular UI principles.",
+      "Lead and mentor frontend developers through code reviews, pair programming, and technical guidance.",
+      "Collaborate with backend, DevOps, QA, and product teams to deliver integrated solutions.",
+      "Provide hands-on support during complex development, debugging, and performance optimization.",
+      "Oversee CI/CD integration, code quality metrics, and deployment readiness.",
+      "Implement best practices for responsive design, cross-browser compatibility, and multi-device performance.",
+      "Work with Product Managers, UX Designers, and Business Owners to translate requirements into scalable solutions.",
+      "Conduct architecture reviews, design walkthroughs, and risk assessments.",
+      "Developed UI components leveraging AI tools like Cursor and Claude to enhance development speed, code quality, and overall efficiency.",
+      "Conducted thorough reviews of front-end applications, providing actionable feedback that significantly improved app performance by an average of 25%.",
+      "Developed and maintained a design system, OUNCE, creating reusable UI components to ensure consistency and scalability across applications."
     ],
   },
   {
-    role: "Frontend Tech Lead",
-    company: "CedCommerce",
-    period: "2018 — 2022",
+    role: "Senior UI Designer",
+    company: "CEDCOSS Technologies Private Limited",
+    period: "2015 — 2024",
     achievements: [
       "Built and maintained Shopify and Magento 2 apps listed on 10+ marketplace integrations.",
       "Mentored a team of 6 frontend engineers; established code-review and testing standards.",
-      "Delivered a React admin panel replacing a legacy jQuery UI, reducing support tickets by 30%.",
+      "Delivered a React admin panel replacing a legacy jQuery UI",
+      "Connected with clients to understand their requirements and delivered tailored solutions that met their needs effectively.",
+      "Created and deployed various E-commerce stores using frameworks like shopify and Magento.",
+      "Customize many E-commerce stores and landing pages based on client requirements.",
+      "Make store Mobile compatible and multiple browser compatible.",
+      "Enhanced application efficiency and user experience by implementing best practices in code optimization and performance tuning.",
+      "Collaborated with developers and stakeholders to enhance the overall user experience."
     ],
   },
-  {
-    role: "Frontend Developer",
-    company: "Digital Studio",
-    period: "2015 — 2018",
-    achievements: [
-      "Developed 20+ responsive e-commerce themes for clients across retail, fashion, and B2B.",
-      "Implemented accessibility fixes bringing client sites to WCAG 2.1 AA compliance.",
-      "Introduced SCSS + BEM conventions that became the studio's standard.",
-    ],
-  },
-  {
-    role: "Junior Web Developer",
-    company: "Freelance",
-    period: "2013 — 2015",
-    achievements: [
-      "Built custom WordPress and Magento 1 themes for small and mid-size businesses.",
-      "Hand-coded responsive HTML/CSS/jQuery templates and landing pages.",
-    ],
-  },
+  
 ];
 
 export const SERVICES: Service[] = [
@@ -406,35 +631,37 @@ export const SERVICES: Service[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote:
-      "Arvinda turned our legacy Magento theme into a modern, blazing-fast experience. Conversion rate went up 28% in the first quarter and our devs actually enjoy working on the frontend now.",
-    name: "Priya Sharma",
-    role: "Head of Product, RetailCo",
+    quote: "Arvinda is one of the best frontend developer i ever met. He knows all the basic and core concepts of web design. He play with UI/UX easily. Well he is a magento player, he knows the core concept of magento theming part. I recommend him.",
+    name: "Vikas Patel",
+    role: "Module Lead, @Bold",
+    imageUrl: vikas,
     initials: "PS",
     location: "India",
   },
   {
-    quote:
-      "One of the sharpest React engineers I've worked with. Takes ownership, writes maintainable code, and raises the bar for the whole team without being preachy about it.",
-    name: "Daniel Lee",
-    role: "Engineering Manager, SaaS Inc.",
+    quote: "Arvinda sir is a fantastic professional who brings all of the skills and expertise in web designing and the way he handles the clients is genuinely remarkable. It was indeed a pleasure to meet him in a webinar and have guidance and advices of such senior personnel at the office. Under his guidance, I gained a variety of skills that help me in every aspect. I joined his workshop on Design Thinking. and that was so inspiring and creative, I found very easy to understand the concepts and enjoyed a lot. He is the best person any new intern can ask. I am lucky to have a guidance of such personnel.",
+    name: "Anamika Bajpai",
+    role: "Senior Software Sngineer, @LTM",
+    imageUrl: anamika,
     initials: "DL",
-    location: "United States",
+    location: "India",
   },
   {
     quote:
-      "He rebuilt our Shopify storefront as a headless Hydrogen app and shaved seconds off every page. Clear communicator, great partner — we'd hire him again tomorrow.",
-    name: "Maria González",
-    role: "Founder, DTC Brand",
+    "I worked along side Mr. Arvinda for several years while at CedCommerce and he never failed to impress me. He is the type of employee who seems to have a never ending amount of tricks up their sleeve. Right when you think you've seen the best of his abilities he quickly shows you that he's so much more. First off, Mr. Arvinda has a natural gift for design, user experience and client workflows. He is also an excellent team player, quickly shifting focus from one department for another as they all clamor for his assistance. Mr. Arvinda is also just an awesome person to work with, he's fun, simple, hard working and extremely talented. I recommend him highly for any position in UX/UI or design. He would be a great asset to any organization. All in all, Mr. Arvinda is a rockstar and any organization would we lucky to have him.",
+    name: "Shivam Varshney",
+    role: "Software Engineer @LTM ",
+    imageUrl: shivam,
     initials: "MG",
-    location: "Spain",
+    location: "India",
   },
   {
     quote:
       "Incredible attention to detail and a real eye for accessibility. Our WCAG audit came back cleaner than it's ever been, and the design system he built is still the backbone of the product.",
-    name: "James Okafor",
-    role: "Design Director, Studio North",
+    name: "Manpreet Kaur",
+    role: "UX/Product Designer, @ThreeColts",
+    imageUrl: manpreet,
     initials: "JO",
-    location: "United Kingdom",
+    location: "India",
   },
 ];

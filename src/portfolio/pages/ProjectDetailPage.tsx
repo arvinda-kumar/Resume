@@ -158,6 +158,26 @@ const ProjectDetailPage: React.FC = () => {
         </div>
       </section>
 
+      <section>
+        <div>
+          <h2>{project.userStory.heading}</h2>
+
+          {project.userStory.userStories.map((story, index) => (
+          <div key={index}>
+            <h4>{story.section}</h4>
+            <p>{story.description1}</p>
+
+            <strong>{story.criteria}</strong>
+            <ul>
+              {story.criteriaList.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        </div>
+      </section>
+
       <section className="pf-section">
         <div className="pf-container">
           <div className="pf-detail-nav">
@@ -183,6 +203,7 @@ const ProjectDetailPage: React.FC = () => {
           </div>
         </div>
       </section>
+      
     </PageShell>
   );
 };

@@ -28,8 +28,8 @@ const TECHS: Tech[] = [
   { name: "Node.js", slug: "nodedotjs" },
   { name: "Webpack", slug: "webpack" },
   { name: "Vite", slug: "vite" },
-  { name: "Jest", slug: "jest" },
-  { name: "Cypress", slug: "cypress" },
+  // { name: "Jest", slug: "jest" },
+  // { name: "Cypress", slug: "cypress" },
   { name: "Storybook", slug: "storybook" },
   { name: "Git", slug: "git" },
   { name: "GitHub", slug: "github" },
@@ -38,6 +38,7 @@ const TECHS: Tech[] = [
   { name: "VS Code", slug: "visualstudiocode" },
   { name: "Docker", slug: "docker" },
   { name: "Nginx", slug: "nginx" },
+
 ];
 
 const TechCard: React.FC<{ tech: Tech; idx: number }> = ({ tech, idx }) => {
@@ -69,14 +70,14 @@ const TechStack: React.FC = () => (
     <div className="pf-container">
       <div
         className="pf-section-head pf-reveal is-visible"
-        style={{ textAlign: "center", margin: "0 auto 3rem", maxWidth: "720px" }}
+        
       >
         <span className="pf-eyebrow" style={{ marginInline: "auto" }}>
           Tech Stack
         </span>
         <h2 className="pf-section-title">Technologies &amp; Skills I Work With</h2>
         <p className="pf-section-sub">
-          A comprehensive toolkit built over 10+ years of hands-on development
+          A comprehensive toolkit built over 11 years of hands-on development
           experience.
         </p>
       </div>

@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="pf-section">
       <div className="pf-container">
-        <div className="pf-section-head pf-reveal is-visible" style={{ textAlign: "center", margin: "0 auto 3rem", maxWidth: "720px" }}>
+        <div className="pf-section-head pf-reveal is-visible">
           <span className="pf-eyebrow" style={{ marginInline: "auto" }}>Contact</span>
           <h2 className="pf-section-title">Let's build something together</h2>
           <p className="pf-section-sub">Open to senior frontend roles, freelance projects, and consulting. I'll respond within a day.</p>

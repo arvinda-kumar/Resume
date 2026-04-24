@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SERVICES, TESTIMONIALS } from "../data/content";
 import { useReveal } from "../hooks/useReveal";
 
@@ -36,9 +36,18 @@ const TestimonialCard: React.FC<{
   role: string;
   initials: string;
   location: string;
+  imageUrl: string;
   idx: number;
-}> = ({ quote, name, role, initials, location, idx }) => {
+}> = ({ quote, name, role, initials, location,imageUrl, idx }) => {
   const ref = useReveal<HTMLElement>();
+  const [expanded, setExpanded] = useState(false);
+
+  const MAX_LENGTH = 135; // adjust as needed
+  const isLong = quote.length > MAX_LENGTH;
+
+  const displayedText = expanded
+    ? quote
+    : quote.slice(0, MAX_LENGTH) + (isLong ? "..." : "");
   return (
     <figure ref={ref} className={`pf-testimonial pf-reveal pf-reveal--delay-${(idx % 4) + 1}`}>
       <span className="pf-testimonial__mark" aria-hidden="true">
@@ -50,11 +59,25 @@ const TestimonialCard: React.FC<{
         ))}
       </div>
       <blockquote className="pf-testimonial__body">
-        <p>&ldquo;{quote}&rdquo;</p>
+        <p>
+            &ldquo;{displayedText}&rdquo;
+            {isLong && (
+              <button
+                className="pf-read-toggle"
+                onClick={() => setExpanded(!expanded)}
+              >
+                {expanded ? " Read less" : " Read more"}
+              </button>
+            )}
+          </p>
       </blockquote>
       <hr className="pf-testimonial__divider" />
       <figcaption className="pf-testimonial__person">
-        <div className="pf-testimonial__avatar" aria-hidden="true">{initials}</div>
+        <div className="pf-testimonial__avatar" aria-hidden="true">
+          <img src={imageUrl} />
+          {/* {initials} */}
+
+        </div>
         <div className="pf-testimonial__who">
           <div className="pf-testimonial__name">{name}</div>
           <div className="pf-testimonial__role">{role}</div>
