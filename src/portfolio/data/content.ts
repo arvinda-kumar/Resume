@@ -82,9 +82,9 @@ export const PROFILE = {
   tagline: "11 years building performant, accessible web experiences",
   intro:
     "I'm a senior frontend developer with a decade of experience building polished, production-grade interfaces. I specialize in React, JavaScript(ES6), TypeScript, and modern e-commerce platforms like Magento and Shopify — turning complex requirements into fast, accessible, and maintainable UIs.",
-  email: "arvinda.dev@example.com",
-  phone: "+91 98765 43210",
-  location: "India · Remote",
+  email: "arvindkumar.kumar05@gmail.com",
+  phone: "+91 8887684411",
+  location: "Lucknow, Uttar Pradesh, India",
   github: "https://github.com/arkumar3c",
   linkedin: "https://www.linkedin.com/",
   resumeUrl: "/resume.pdf",
