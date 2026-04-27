@@ -2693,3 +2693,127 @@ html {
   font-weight: 600;
   font-size: 1rem;
 }
+
+/* ==========================================================================
+   Recommendation (manager LinkedIn review)
+   ========================================================================== */
+
+.pf-recommend {
+  position: relative;
+  margin-inline: auto;
+  background: var(--pf-card);
+  border: 1px solid var(--pf-border);
+  border-radius: var(--pf-radius-md);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  box-shadow: var(--pf-shadow-md);
+  overflow: hidden;
+}
+
+.pf-recommend::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 6px;
+  height: 100%;
+  background: var(--pf-cta-gradient, var(--pf-accent));
+}
+
+.pf-recommend__quote-mark {
+  color: var(--pf-accent);
+  opacity: 0.35;
+  margin-bottom: 0.5rem;
+  line-height: 0;
+}
+
+.pf-recommend__quote {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--pf-text);
+  margin: 0 0 1.75rem;
+  font-style: italic;
+  quotes: none;
+}
+
+.pf-recommend__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--pf-border);
+}
+
+.pf-recommend__person {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  min-width: 0;
+}
+
+.pf-recommend__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--pf-accent-soft);
+  color: var(--pf-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.pf-recommend__meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pf-recommend__name {
+  font-size: 1rem;
+  color: var(--pf-text);
+}
+
+.pf-recommend__role {
+  font-size: 0.9rem;
+  color: var(--pf-text-muted);
+}
+
+.pf-recommend__relation {
+  font-size: 0.78rem;
+  color: var(--pf-text-subtle);
+  margin-top: 0.2rem;
+}
+
+.pf-recommend__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--pf-radius-pill);
+  background: #0a66c2;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: transform var(--pf-dur) var(--pf-ease),
+    box-shadow var(--pf-dur) var(--pf-ease);
+}
+
+.pf-recommend__link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.32);
+}
+
+@media (max-width: 560px) {
+  .pf-recommend__foot {
+    align-items: flex-start;
+  }
+  .pf-recommend__link {
+    width: 100%;
+    justify-content: center;
+  }
+}

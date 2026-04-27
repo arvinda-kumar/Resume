@@ -629,6 +629,27 @@ export const SERVICES: Service[] = [
   },
 ];
 
+export interface Recommendation {
+  quote: string;
+  name: string;
+  role: string;
+  relationship: string;
+  date: string;
+  linkedinUrl: string;
+  initials: string;
+}
+
+export const MANAGER_RECOMMENDATION: Recommendation = {
+  quote:
+    "Replace this placeholder with the recommendation text your manager wrote on LinkedIn. Keep the original wording so it stays authentic — paste it exactly as it appears on your LinkedIn profile.",
+  name: "Manager Name",
+  role: "Manager Title, Company",
+  relationship: "Managed Arvinda directly",
+  date: "April 2026",
+  linkedinUrl: "https://www.linkedin.com/in/your-manager-handle/",
+  initials: "MN",
+};
+
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote: "Arvinda is one of the best frontend developer i ever met. He knows all the basic and core concepts of web design. He play with UI/UX easily. Well he is a magento player, he knows the core concept of magento theming part. I recommend him.",
