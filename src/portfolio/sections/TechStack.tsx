@@ -1,6 +1,19 @@
 import React from "react";
 import { useReveal } from "../hooks/useReveal";
 
+const magento1 = <svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_139_34)">
+<path d="M30.8399 8.99297V27L26.4529 29.5664V11.5805L15.4852 5.13984L4.51066 11.5805L4.53834 29.5734L0.158203 27V9.00703L15.5129 0L30.8399 8.99297ZM17.6857 29.5664L15.4991 30.8601L13.2986 29.5805V11.5805L8.91847 14.1539L8.92539 32.1469L15.4921 36.007L22.0727 32.1469V14.1469L17.6857 11.5734V29.5664Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_139_34">
+<rect width="31" height="36" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+
+
 interface Tech {
   name: string;
   slug: string;
@@ -11,13 +24,13 @@ const TECHS: Tech[] = [
   { name: "JavaScript", slug: "javascript" },
   { name: "TypeScript", slug: "typescript" },
   { name: "HTML5", slug: "html5" },
-  { name: "CSS3", slug: "css3" },
+  { name: "CSS", slug: "css" },
   { name: "SASS", slug: "sass" },
   { name: "Tailwind CSS", slug: "tailwindcss" },
   { name: "Bootstrap", slug: "bootstrap" },
 
   { name: "Shopify", slug: "shopify" },
-  { name: "Magento", slug: "magento" },
+  // { name: "Magento", slug: 'magento' },
   { name: "WooCommerce", slug: "woocommerce" },
   { name: "WordPress", slug: "wordpress" },
   { name: "Next.js", slug: "nextdotjs" },
@@ -35,7 +48,7 @@ const TECHS: Tech[] = [
   { name: "GitHub", slug: "github" },
 
   { name: "Figma", slug: "figma" },
-  { name: "VS Code", slug: "visualstudiocode" },
+  // { name: "VS Code", slug: "visualstudiocode" },
   { name: "Docker", slug: "docker" },
   { name: "Nginx", slug: "nginx" },
 
@@ -75,7 +88,7 @@ const TechStack: React.FC = () => (
         <span className="pf-eyebrow" style={{ marginInline: "auto" }}>
           Tech Stack
         </span>
-        <h2 className="pf-section-title">Technologies &amp; Skills I Work With</h2>
+        <h2 className="pf-section-title">Technologies & Skills Behind My Workflow</h2>
         <p className="pf-section-sub">
           A comprehensive toolkit built over 11 years of hands-on development
           experience.

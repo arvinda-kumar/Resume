@@ -106,7 +106,7 @@ const Skills: React.FC = () => (
     <div className="pf-container">
       <div className="pf-section-head pf-reveal is-visible">
         <span className="pf-eyebrow">Skills</span>
-        <h2 className="pf-section-title">Tools I reach for every day</h2>
+        <h2 className="pf-section-title">Tools & Platforms That Power My Work</h2>
         <p className="pf-section-sub">
           Deep expertise in React and the modern JavaScript ecosystem, plus
           years of hands-on e-commerce platform work.

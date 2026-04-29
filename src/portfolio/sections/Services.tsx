@@ -93,7 +93,7 @@ const Services: React.FC = () => (
       <div className="pf-container other-recommendation">
         <div className="pf-section-head pf-reveal is-visible" style={{ marginBottom: "2rem" }}>
           <h2 className="pf-section-title" style={{ fontSize: "clamp(1.5rem, 2.6vw, 2rem)" }}>
-            Other Recommendation
+            Other recommendation
           </h2>
         </div>
         <div className="pf-testimonials__grid">

@@ -232,6 +232,7 @@ html {
   font-size: clamp(1.8rem, 3.4vw, 2.5rem);
   margin-top: 0;
   margin-bottom: 15px;
+  text-transform: capitalize;
 }
 
 .pf-section-sub {
