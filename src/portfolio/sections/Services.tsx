@@ -89,32 +89,38 @@ const TestimonialCard: React.FC<{
 };
 
 const Services: React.FC = () => (
-  <section id="services" className="pf-section pf-section--alt">
-    <div className="pf-container">
-      <div className="pf-section-head pf-reveal is-visible">
-        <span className="pf-eyebrow">Services</span>
-        <h2 className="pf-section-title">How I can help</h2>
-        <p className="pf-section-sub">Focused engagements where a senior frontend engineer moves the needle — end-to-end builds, platform work, and performance wins.</p>
+  <div>
+      <div className="pf-container other-recommendation">
+        <div className="pf-section-head pf-reveal is-visible" style={{ marginBottom: "2rem" }}>
+          <h2 className="pf-section-title" style={{ fontSize: "clamp(1.5rem, 2.6vw, 2rem)" }}>
+            Other Recommendation
+          </h2>
+        </div>
+        <div className="pf-testimonials__grid">
+          {TESTIMONIALS.map((t, i) => (
+            <TestimonialCard key={t.name} {...t} idx={i} />
+          ))}
+        </div>
       </div>
+        
+   
+    <section className="pf-section pf-section--alt">
+      <div className="pf-container">
+        <div className="pf-section-head pf-reveal is-visible">
+            <span className="pf-eyebrow">Services</span>
+            <h2 className="pf-section-title">How I can help</h2>
+            <p className="pf-section-sub">Focused engagements where a senior frontend engineer moves the needle — end-to-end builds, platform work, and performance wins.</p>
+        </div>
 
-      <div className="pf-services__grid" style={{ marginBottom: "3.5rem" }}>
-        {SERVICES.map((s, i) => (
-          <ServiceCard key={s.title} {...s} idx={i} />
-        ))}
+        <div className="pf-services__grid">
+          {SERVICES.map((s, i) => (
+            <ServiceCard key={s.title} {...s} idx={i} />
+          ))}
+        </div> 
       </div>
-
-      <div className="pf-section-head pf-reveal is-visible" style={{ marginBottom: "2rem" }}>
-        <h2 className="pf-section-title" style={{ fontSize: "clamp(1.5rem, 2.6vw, 2rem)" }}>
-          What people are saying
-        </h2>
-      </div>
-      <div className="pf-testimonials__grid">
-        {TESTIMONIALS.map((t, i) => (
-          <TestimonialCard key={t.name} {...t} idx={i} />
-        ))}
-      </div>
-    </div>
-  </section>
+      
+    </section>
+  </div>
 );
 
 export default Services;

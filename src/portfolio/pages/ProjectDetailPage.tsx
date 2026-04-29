@@ -79,9 +79,14 @@ const ProjectDetailPage: React.FC = () => {
 
             <div ref={metaRef} className="pf-reveal pf-detail-hero__cover">
               <div className="pf-detail-hero__cover-art" aria-hidden="true">
-                {project.initials}
+                {/* {project.initials} */}
+                {project.thumbnail ? (
+                  <img src={project.thumbnail} alt="" loading="lazy" />
+                ) : (
+                  project.initials
+                )}
               </div>
-              <dl className="pf-detail-meta">
+              {/* <dl className="pf-detail-meta">
                 <div>
                   <dt>Year</dt>
                   <dd>{project.year}</dd>
@@ -106,7 +111,7 @@ const ProjectDetailPage: React.FC = () => {
                     </span>
                   </dd>
                 </div>
-              </dl>
+              </dl> */}
             </div>
           </div>
         </div>
@@ -158,24 +163,29 @@ const ProjectDetailPage: React.FC = () => {
         </div>
       </section>
 
-      <section>
-        <div>
-          <h2>{project.userStory.heading}</h2>
+      <section className="pf-section pf-userStory">
+      <div className="pf-container">
+        {project.userStory.map((item, index1) => (
+          <div key={index1}>
+            <h2>{item.heading}</h2>
 
-          {project.userStory.userStories.map((story, index) => (
-          <div key={index}>
-            <h4>{story.section}</h4>
-            <p>{story.description1}</p>
+            {item.userStories.map((story, index) => (
+              <div key={index} className="pf-userStory-items">
+                <h4>{story.section}</h4>
+                <p>{story.description1}</p>
 
-            <strong>{story.criteria}</strong>
-            <ul>
-              {story.criteriaList.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+                {story.criteria && <strong>{story.criteria}</strong>}
+
+                <ul>
+                  {story.criteriaList.map((listItem, i) => (
+                    <li key={i}>{listItem}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         ))}
-        </div>
+      </div>
       </section>
 
       <section className="pf-section">

@@ -4,6 +4,7 @@ import PageShell from "./components/PageShell";
 import Hero from "./sections/Hero";
 import Achievements from "./sections/Achievements";
 import About from "./sections/About";
+import Recommendation from "./sections/Recommendation";
 import UsedDesignSystem from "./sections/UsedDesignSystem";
 
 const Skills = lazy(() => import("./sections/Skills"));
@@ -36,13 +37,15 @@ const Portfolio: React.FC = () => {
       <Hero />
       <Achievements />
       <About />
+      <Recommendation />
+      
       <Suspense fallback={<SectionFallback />}>
         <Skills />
         <TechStack />
         <UsedDesignSystem />
         <Projects />
         <Experience />
-        <Services />
+        
         <Contact />
       </Suspense>
     </PageShell>

@@ -2,6 +2,18 @@ import shivam from '../../assets/imgs/shivam.jpg';
 import anamika from '../../assets/imgs/anamika.jpg';
 import manpreet from '../../assets/imgs/mapreet.jpg';
 import vikas from '../../assets/imgs/vikas.jpg';
+import jaikant from '../../assets/imgs/jaikant.jpg';
+
+
+import shopifyTts from '../../assets/imgs/projects/shopify-tts.png'
+import unicon from '../../assets/imgs/projects/unicon.png'
+import ounce from '../../assets/imgs/projects/ounce.png'
+import dorab from '../../assets/imgs/projects/dorab.png'
+import gig from '../../assets/imgs/projects/gig.png'
+import loversCoffee from '../../assets/imgs/projects/lover-cofee.png'
+
+import rsumepath from '../../assets/resume/Resume.pdf'
+
 
 export interface SkillItem {
   name: string;
@@ -39,7 +51,7 @@ export interface Project {
   // description1: string;
   // criteria: string
   // criteriaList?: string[];
-  userStory: UserStory;
+  userStory: UserStory[];
 }
 
 type UserStoryItem = {
@@ -85,9 +97,9 @@ export const PROFILE = {
   email: "arvindkumar.kumar05@gmail.com",
   phone: "+91 8887684411",
   location: "Lucknow, Uttar Pradesh, India",
-  github: "https://github.com/arkumar3c",
-  linkedin: "https://www.linkedin.com/",
-  resumeUrl: "/resume.pdf",
+  github: "https://github.com/arvinda-kumar",
+  linkedin: "https://www.linkedin.com/in/arvindakumar93/",
+  resumeUrl: rsumepath,
   stats: [
     { num: "10+", label: "Years of experience" },
     { num: "50+", label: "Projects shipped" },
@@ -158,7 +170,7 @@ export const STACK_TAGS = [
 
 export const PROJECTS: Project[] = [
   {
-    slug: "headless-shopify-storefront",
+    slug: "cedcommerce-tiktak-shop",
     title: "CedCommerce TikTok Shop",
     initials: "HS",
     year: "2024",
@@ -185,13 +197,13 @@ export const PROJECTS: Project[] = [
       "18% lift in mobile conversion after 6 weeks",
       "Reduced theme-editor ticket volume by 60%",
     ],
-    stack: ["React", "HTML","CSS", "TypeScript", "OUNCE"],
+    stack: ["React", "HTML","CSS", "TypeScript", "Polaris"],
     demo: "https://apps.shopify.com/cedcommerce-tiktok-shop",
     code: "https://github.com/",
     thumbnail:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=80&auto=format&fit=crop",
+    shopifyTts,
       
-    userStory : {
+    userStory :[ {
         heading: 'UI Development User Stories',
         userStories: [
           {
@@ -209,32 +221,104 @@ export const PROJECTS: Project[] = [
             ],
           },
           {
-            section: 'Onboarding UI1',
+            section: 'Dashboard UI',
             description1:
-              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+              'As a merchant, I want a visually structured dashboard so that I can quickly understand my performance.',
             criteria: 'UI Acceptance Criteria',
             criteriaList: [
-              'Use Polaris Page + Card + FormLayout',
-              'Step-based UI (Stepper / Progress indicator)',
-              'Clear CTA buttons (Primary / Secondary)',
-              'Inline validation with error messages',
-              'Loading state during API calls (Spinner / Skeleton)',
-              'Success & error banners (Polaris Banner component)',
+              'Use Polaris Layout + Card + Data Visualization patterns',
+              'KPI cards (Revenue, Orders, Products)',
+              'Responsive grid layout',
+              'Charts integrated (consistent spacing & typography)',
+              'Skeleton loaders while data loads',
+              'Empty state UI when no data is available',
+            ],
+          },
+
+          {
+            section: 'Product Listing UI',
+            description1:
+              'As a merchant, I want a structured product listing UI so that I can easily manage and sync products.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris IndexTable / DataTable',
+              'Product thumbnail + title + status columns',
+              'Bulk selection with checkbox',
+              'Filters and search (Polaris Filters component)',
+              'Pagination support',
+              'Status badges (Active, Draft, Synced, Failed)',
+            ],
+          },
+          {
+            section: 'Profiling (Template) UI',
+            description1:
+              'As a merchant, I want an intuitive customization interface so that I can design my shop profile easily.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Card + Tabs + FormLayout',
+              'Template selection grid (visual cards)',
+              'Live preview panel (split layout)',
+              'Color picker, typography controls',
+              'Save / Publish CTA with sticky footer',
+              'Responsive preview (mobile + desktop)',
+            ],
+          },
+          {
+            section: 'Order Grid UI',
+            description1:
+              'As a merchant, I want a clear order management UI so that I can track and process orders efficiently.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris IndexTable',
+              'Order status badges (Pending, Shipped, Delivered)',
+              'Filters (date, status, customer)',
+              'Row click → Order detail page',
+              'Bulk actions (mark shipped, cancel)',
+              'Empty state & loading state handled',
+            ],
+          },
+          {
+            section: 'Pricing UI',
+            description1:
+              'As a merchant, I want a clear pricing page so that I can compare plans and subscribe easily.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Card + Layout',
+              'Pricing cards (Basic / Pro / Enterprise)',
+              'Highlight recommended plan',
+              'Feature comparison list',
+              'CTA buttons (Upgrade / Downgrade)',
+              'Responsive stacking on mobile',
+            ],
+          },
+          {
+            section: 'Setting (Configuration) UI',
+            description1:
+              'As a merchant, I want a well-organized settings page so that I can configure my integration easily.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Use Polaris Tabs + Card + FormLayout',
+              'Group settings into sections (API, Notifications, Sync)',
+              'Toggle switches for enable/disable',
+              'Inline help text and tooltips',
+              'Save button with loading state',
+              'Success toast/banner after save',
             ],
           },
         ],
       }
+    ]
   },
   {
-    slug: "magento-2-theme-rebuild",
-    title: "Magento 2 Theme Rebuild",
+    slug: "UNICON-Inegration-App",
+    title: "UNICON Inegration App",
     initials: "M2",
     year: "2023",
     role: "Senior Frontend Developer",
     client: "Multi-brand retailer",
     category: "E-commerce",
     summary:
-      "Rebuilt a legacy Magento 2 theme as a modular SCSS + KnockoutJS system. Dropped bundle size by 55%.",
+      "UniCon is our product designed to integrate multiple marketplaces with Shopify, enabling seamless product listing, inventory management, and order synchronization across platforms.",
     description:
       "Led the frontend rebuild of a large Magento 2 storefront serving 4 brands from a single codebase. Replaced an aging Luma-based theme with a modular SCSS architecture, a performant checkout, and a unified design system.",
     features: [
@@ -252,279 +336,567 @@ export const PROJECTS: Project[] = [
       "Checkout abandonment down 14%",
       "Onboarding a new brand now takes days, not weeks",
     ],
-    stack: ["Magento 2", "SCSS", "KnockoutJS", "PHP", "RequireJS"],
+    stack: ["React", "CSS", "HTML", "TypeScript"],
     demo: "#",
     thumbnail:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop",
-      userStory : {
-        heading: 'UI Development User Stories',
+      unicon,
+      userStory :[ {
+        heading: 'UniCon – UI Development User Stories',
         userStories: [
           {
-            section: 'Onboarding UI',
+            section: 'Design System Integration',
             description1:
-              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
-            criteria: 'UI Acceptance Criteria',
+              'As a frontend developer, I want to use Ounce design system components so that the UI remains consistent and scalable.',
+            criteria: 'Story: Implement Ounce Design System Components',
             criteriaList: [
-              'Use Polaris Page + Card + FormLayout',
-              'Step-based UI (Stepper / Progress indicator)',
-              'Clear CTA buttons (Primary / Secondary)',
-              'Inline validation with error messages',
-              'Loading state during API calls (Spinner / Skeleton)',
-              'Success & error banners (Polaris Banner component)',
+              'Use prebuilt components (Button, Input, Modal, Table, Card)',
+              'Follow Ounce spacing, typography, and color tokens',
+              'No custom styles unless necessary (override via tokens only)',
+              'Ensure theme compatibility (light/dark if supported)',
             ],
           },
           {
-            section: 'Onboarding UI1',
+            section: 'Story: Create Reusable UI Wrappers',
             description1:
-              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+              'As a frontend developer, I want to build reusable wrappers around Ounce components so that they fit UniCon-specific use cases.',
             criteria: 'UI Acceptance Criteria',
             criteriaList: [
-              'Use Polaris Page + Card + FormLayout',
-              'Step-based UI (Stepper / Progress indicator)',
-              'Clear CTA buttons (Primary / Secondary)',
-              'Inline validation with error messages',
-              'Loading state during API calls (Spinner / Skeleton)',
-              'Success & error banners (Polaris Banner component)',
+              'Create shared components (e.g., MarketplaceCard, StatusBadge, SyncButton)',
+              'Props-based configuration for reusability',
+              'Proper TypeScript typing (if used)',
+              'Document usage',
+            ],
+          },
+          {
+            section: 'Story: Build Multi-Step Onboarding UI',
+            description1:
+              'As a user, I want a guided onboarding UI so that I can easily set up integrations.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Stepper component (Ounce-based)',
+              'Form validation using UI feedback (error states, helper text)',
+              'Responsive layout',
+              'Persist state between steps',
+            ],
+          },
+          {
+            section: 'Story: Marketplace Connection UI',
+            description1:
+              'As a user, I want a clean UI to connect marketplaces so that I understand connection status.',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Card-based UI for each marketplace',
+              'Show states: Connected / Disconnected / Error / Loading',
+              'CTA buttons (Connect, Retry, Disconnect)',
+              'Loading skeletons while fetching status',
             ],
           },
         ],
-      }
+      }]
   },
   {
-    slug: "saas-analytics-dashboard",
-    title: "SaaS Analytics Dashboard",
+    slug: "ounce-design-system",
+    title: "Ounce Design system",
     initials: "SA",
     year: "2024",
     role: "Frontend Tech Lead",
     client: "B2B analytics SaaS",
     category: "SaaS",
     summary:
-      "Data-dense admin dashboard with real-time charts, virtualized tables, and RBAC for 50k+ daily users.",
+      "Ounce is a scalable design system built to standardize UI across CedCommerce products. I created structured user stories for tokens, components, and patterns focusing on reusability, accessibility, and developer efficiency. This helps reduce development time, improve consistency, and enhance overall UX.",
     description:
-      "Architected the new admin dashboard for a B2B analytics SaaS — handling hundreds of thousands of rows per view with instant filtering, drill-downs, and live streaming updates from the backend.",
+      "Ounce is a scalable and modular design system built to standardize the user interface across CedCommerce’s ecosystem of eCommerce products and integrations. It was designed with the primary goal of creating a unified visual language and reusable component architecture that enables both designers and developers to work more efficiently while maintaining consistency at scale. At its core, Ounce establishes a solid foundation through well-defined design tokens, including typography, color palettes, spacing, grid systems, and elevation rules. These tokens ensure visual consistency across multiple platforms while also supporting theming capabilities such as light and dark modes. By abstracting these fundamentals, Ounce allows teams to quickly adapt branding requirements without breaking the overall design consistency. On top of this foundation, Ounce provides a comprehensive library of reusable UI components such as buttons, inputs, modals, tables, cards, navigation systems, and feedback elements like toasts and alerts. Each component is built with a clear structure, multiple variants, and defined states (hover, active, disabled, loading), ensuring flexibility while maintaining design integrity. These components are developed with a strong focus on accessibility, adhering to WCAG guidelines, supporting keyboard navigation, and ensuring proper ARIA attributes.",
     features: [
-      "Virtualized tables rendering 100k+ rows smoothly",
-      "Real-time chart streaming over WebSockets",
-      "Role-based permissions enforced at the route level",
-      "Dashboard builder with drag-and-drop widgets",
+      "Reduced development time through reusable components",
+      "Improved UI consistency across multiple products",
+      "Enhanced collaboration between design and engineering teams",
+      "Better user experience due to predictable and intuitive interfaces",
     ],
     challenges: [
-      "Keeping interactions at 60fps with live data pushes",
-      "Designing a permissions model flexible enough for 6 personas",
+      "Lack of UI consistency across multiple CedCommerce products and dashboards",
+      "Same components (buttons, forms, tables) were built differently by different teams",
+      "Duplicate development effort due to no reusable component library",
+      "Increased development time because teams were rebuilding UI from scratch",
+      "No single source of truth for design and frontend implementation",
+      "Gap between design and development alignment, causing rework and delays",
+      "Difficulty in scaling products while maintaining consistent UI/UX",
+      "Frequent UI bugs due to inconsistent implementation across codebases",
+      "Limited focus on accessibility standards (WCAG) across components",
+      "Hard to maintain and update UI changes across multiple products"
     ],
     outcomes: [
-      "Time-to-first-insight reduced from 45s to 6s",
-      "Support tickets for 'slow dashboard' down 80%",
-      "Adopted across 3 enterprise customers in 2 quarters",
+      "Create a unified design language",
+      "Build a reusable component system",
+      "Improve developer productivity and speed",
+      "Ensure consistent and accessible user experience",
+      "Enable scalable and maintainable frontend architecture"
     ],
     stack: ["React", "TypeScript", "Redux Toolkit", "D3", "WebSockets"],
     demo: "#",
-    code: "https://github.com/arkumar3c",
+    code: "#",
     thumbnail:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop",
-      userStory : {
-        heading: 'UI Development User Stories',
+    ounce,
+      userStory :[ {
+        heading: 'Ounce Design System – User Stories',
         userStories: [
           {
-            section: 'Onboarding UI',
+            section: 'Product Vision',
             description1:
-              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+              'Ounce is a scalable design system built for eCommerce platforms to ensure:',
             criteria: 'UI Acceptance Criteria',
             criteriaList: [
-              'Use Polaris Page + Card + FormLayout',
-              'Step-based UI (Stepper / Progress indicator)',
-              'Clear CTA buttons (Primary / Secondary)',
-              'Inline validation with error messages',
-              'Loading state during API calls (Spinner / Skeleton)',
-              'Success & error banners (Polaris Banner component)',
+              'Consistent UI across products',
+              'Faster development cycles',
+              'Reusable components',
+              'Better accessibility & usability',
             ],
           },
           {
-            section: 'Onboarding UI1',
+            section: 'Foundation (Design Tokens)',
             description1:
-              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+              'As a UI designer want predefined typography styles (heading, body, caption) So that I can maintain consistency across all screens',
             criteria: 'UI Acceptance Criteria',
             criteriaList: [
-              'Use Polaris Page + Card + FormLayout',
-              'Step-based UI (Stepper / Progress indicator)',
-              'Clear CTA buttons (Primary / Secondary)',
-              'Inline validation with error messages',
-              'Loading state during API calls (Spinner / Skeleton)',
-              'Success & error banners (Polaris Banner component)',
+              'Font scale defined (H1–H6, body, label)',
+              'Responsive typography support',
+              'Token-based usage (e.g., font-size-primary)',
+            ],
+          },
+
+          {
+            section: 'User Story: Color System',
+            description1:
+              'As a designer/developer I want a centralized color palette So that I can ensure brand consistency and accessibility',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Primary, secondary, success, warning, error colors',
+              'WCAG contrast compliance',
+              'Token-based usage (e.g., font-size-primary)',
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Core Components',
+        userStories: [
+          {
+            section: 'Button Component',
+            description1:
+              'As a user I want clear and consistent buttons So that I can easily perform actions',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Variants: Primary, Secondary, Outline, Danger',
+              'States: Hover, Active, Disabled, Loading',
+              'Size variants: Small, Medium, Large',
+              'Icon support',
+            ],
+          },
+          {
+            section: 'Input Field',
+            description1:
+              'As a user I want intuitive form inputs So that I can enter data without confusion',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Label, placeholder, helper text',
+              'Error & success states',
+              'Validation support',
+              'Accessibility (ARIA labels)'
+            ],
+          },
+
+          {
+            section: 'Card Component',
+            description1:
+              'As a user I want grouped content in a structured way So that I can easily scan information',
+            criteria: 'UI Acceptance Criteria',
+            criteriaList: [
+              'Header, body, footer slots',
+              'Shadow and border variants',
+              'Responsive behavior',
             ],
           },
         ],
       }
+    ]
   },
   {
-    slug: "design-system-component-library",
-    title: "Design System & Component Library",
+    slug: "dorabjee's-Online-store",
+    title: "Dorabjee's Online Store",
     initials: "DS",
     year: "2023",
     role: "Design System Lead",
     client: "Internal platform team",
     category: "Platform",
     summary:
-      "Themeable component library with Storybook, visual regression, and first-class a11y — shared across 4 products.",
+      'Dorabjee’s is a renowned grocery and gourmet store offering premium quality products. The website, Shop.DorabjeesOnline.com, aims to bring the in-store shopping experience online, providing users with a seamless platform to browse and purchase groceries, fresh produce, and specialty items from the comfort of their homes.',
     description:
-      "Built the foundation of a shared design system — from tokens to components — that unified 4 products on a single React codebase, Storybook-documented and visually regression-tested.",
+      "Dorabjee’s is a renowned grocery and gourmet store offering premium quality products. The website, Shop.DorabjeesOnline.com, aims to bring the in-store shopping experience online, providing users with a seamless platform to browse and purchase groceries, fresh produce, and specialty items from the comfort of their homes.",
     features: [
       "Design tokens synced with Figma variables",
       "40+ accessible primitives with keyboard and SR support",
-      "Storybook with interaction testing and a11y addon",
-      "Chromatic visual regression baked into CI",
+      "Design a visually appealing and user-friendly e-commerce platform.",
+      "Ensure quick and intuitive navigation to help users find products effortlessly.",
+      "Highlight premium and gourmet offerings to reinforce Dorabjee’s brand identity."
     ],
     challenges: [
-      "Aligning 4 product teams on spacing, typography, and motion",
-      "Migrating legacy components without freezing product roadmaps",
+      "Creating a balance between a clean design and displaying a wide range of products.",
+      "Enhancing the search and filter experience to reduce frustration for users.",
+      "Ensuring a responsive design for seamless usage on mobile devices."
     ],
     outcomes: [
-      "New feature UIs now ship 2–3× faster across product teams",
-      "Zero a11y regressions reported in 2 quarters",
-      "Design system NPS of 72 from internal consumers",
+      "High-fidelity UI designs for the homepage, category pages, product pages, and checkout flow.",
+      "A consistent design system for typography, colors, and UI elements.",
+      "Increased website engagement by 35% within the first month of launch.",
+      "Reduced cart abandonment rates by 20% through improved checkout design.",
     ],
-    stack: ["React", "TypeScript", "Storybook", "SCSS", "Chromatic"],
+    stack: ["Magento", "CSS", "HTML", "SCSS", "PHP"],
     code: "https://github.com/arkumar3c",
-    thumbnail:
-      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900&q=80&auto=format&fit=crop",
-      userStory : {
-        heading: 'UI Development User Stories',
+    thumbnail: dorab,
+      userStory :[ {
+        heading: 'Research & Discovery',
         userStories: [
           {
-            section: 'Onboarding UI',
-            description1:
-              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            section: 'Target Audience:',
+            description1: '',
             criteria: 'UI Acceptance Criteria',
             criteriaList: [
-              'Use Polaris Page + Card + FormLayout',
-              'Step-based UI (Stepper / Progress indicator)',
-              'Clear CTA buttons (Primary / Secondary)',
-              'Inline validation with error messages',
-              'Loading state during API calls (Spinner / Skeleton)',
-              'Success & error banners (Polaris Banner component)',
+              'Primary: Busy professionals and homemakers who value convenience in online grocery shopping.',
+              'Secondary: Gourmet food enthusiasts seeking premium-quality products.',
             ],
           },
           {
-            section: 'Onboarding UI1',
+            section: 'Competitor Analysis:',
             description1:
-              'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
-            criteria: 'UI Acceptance Criteria',
+              'Analyzed leading grocery e-commerce websites (e.g., BigBasket, Amazon Fresh, Nature’s Basket). Key observations:',
+            criteria: '',
             criteriaList: [
-              'Use Polaris Page + Card + FormLayout',
-              'Step-based UI (Stepper / Progress indicator)',
-              'Clear CTA buttons (Primary / Secondary)',
-              'Inline validation with error messages',
-              'Loading state during API calls (Spinner / Skeleton)',
-              'Success & error banners (Polaris Banner component)',
+              'Competitors prioritize search and categorization but often lack visual appeal.',
+              'Loyalty programs and offers are significant drivers of user engagement.',
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Design Process',
+        userStories: [
+          {
+            section: 'Moodboard & Visual Direction:',
+            description1: 'The visual direction was inspired by the sophistication of premium products. The design aimed to evoke trust and quality while maintaining simplicity. Keywords: premium, trust, and efficiency.',
+            criteria: '',
+            criteriaList: [
+              'Primary: Busy professionals and homemakers who value convenience in online grocery shopping.',
+              'Secondary: Gourmet food enthusiasts seeking premium-quality products.',
+            ],
+          },
+          {
+            section: 'Wireframing:',
+            description1:
+              '',
+            criteria: '',
+            criteriaList: [
+              'Focused on a clear homepage structure that highlights categories, best-sellers, and offers.',
+              'Designed intuitive product pages with detailed descriptions, pricing, and easy add-to-cart functionality.',
+            ],
+          },
+          {
+            section: 'Color Palette:',
+            description1:
+              '',
+            criteria: '',
+            criteriaList: [
+              'Primary Colors: Elegant shades of green and beige to signify freshness and premium quality.',
+              'Accent Colors: Soft yellows and reds for call-to-action buttons and promotional highlights.',
+            ],
+          },
+          {
+            section: 'UI Component',
+            description1:
+              '',
+            criteria: '',
+            criteriaList: [
+              'Search Bar: Prominent placement with auto-suggestions to speed up searches.',
+              'Category Navigation: Dropdown menus for easy access to key product categories.',
+              "Product Cards: Designed with clear imagery, product name, price, and an add-to-cart button.",
+              "Offers Section: Dedicated space to showcase discounts and deals."
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Visual Design Highlights',
+        userStories: [
+          {
+            section: 'Homepage:',
+            description1: "",
+            criteria: '',
+            criteriaList: [
+              'A clean and welcoming hero section with featured categories and a search bar.',
+              'Featured sections: “Fresh Arrivals,” “Top Deals,” and “Trending Products.”',
+            ],
+          },
+          {
+            section: 'Category Page:',
+            description1:
+              '',
+            criteria: '',
+            criteriaList: [
+              'A two-column layout: product filters on the left and a grid view of products on the right.',
+              'Filter options include price range, brand, and dietary preferences (e.g., organic, vegan).',
+            ],
+          },
+          {
+            section: 'Color Palette:',
+            description1:
+              '',
+            criteria: '',
+            criteriaList: [
+              'Large product images with a zoom-in feature.',
+              'Clear details on price, availability, and delivery options.',
+              "Easy navigation to related products."
+            ],
+          },
+          {
+            section: 'Cart & Checkout:',
+            description1:
+              '',
+            criteria: '',
+            criteriaList: [
+              'A minimalistic cart interface with product thumbnails, quantity adjustments, and a summary section.',
+              'A smooth, multi-step checkout process.',
             ],
           },
         ],
       }
+    ]
   },
   {
-    slug: "ecommerce-pwa",
-    title: "E-commerce PWA",
+    slug: "lovers-coffee",
+    title: "Lovers.Coffee",
     initials: "PW",
     year: "2022",
     role: "Senior Frontend Developer",
     client: "Direct-to-consumer brand",
     category: "E-commerce",
     summary:
-      "Progressive web app checkout with offline cart, Stripe + Razorpay, and a 95+ Lighthouse score.",
+      "Lovers Coffee is an online platform dedicated to coffee enthusiasts. It is a hub for coffee lovers to explore educational resources, read engaging blog posts, and connect with a passionate community. The brand's mission is to celebrate coffee culture and provide a space where aficionados can deepen their appreciation for coffee.",
     description:
-      "Turned a flaky mobile web checkout into an installable PWA that works offline, supports multi-gateway payments, and scores consistently above 95 on Lighthouse.",
+      "Lovers Coffee is a thoughtfully crafted online platform built for people who don’t just drink coffee—but truly appreciate it. It serves as a digital home for coffee enthusiasts of all levels, from curious beginners exploring their first brew methods to seasoned aficionados seeking to refine their palate and deepen their knowledge. At its core, Lovers Coffee celebrates the rich culture, history, and artistry behind every cup, creating a space where passion for coffee can grow and thrive. The platform offers a wide range of educational resources designed to make coffee knowledge accessible and engaging. Users can explore in-depth guides on brewing techniques, bean varieties, roasting processes, and flavor profiles, helping them understand what makes each cup unique. Whether it’s learning how to perfect a pour-over, understanding the difference between Arabica and Robusta beans, or discovering the impact of origin and altitude on taste, Lovers Coffee turns curiosity into expertise.",
     features: [
-      "Offline-first cart with service worker sync",
-      "Stripe + Razorpay + Apple Pay payment flows",
-      "Installable with push notifications for order updates",
-      "Image strategy with AVIF fallback and blur placeholders",
+      "Users can browse and purchase a wide range of coffee-related products such as beans, equipment, and accessories.",
+      "The platform includes search functionality and categorized navigation, making it easy to discover products quickly.",
+      "Users can create accounts, manage orders, and get a personalized experience based on their activity.",
+      "Features like wishlist, cart, and order tracking help users manage their shopping journey efficiently.",
+      "Coffee businesses (roasters, shops, farmers) can list products, manage inventory, and sell directly to customers.",
+      "The platform aims to connect coffee lovers with businesses, creating an interactive community around coffee culture.",
+      "Includes features like 24/7 help center, return policy, safe payment, and free delivery options for better user experience.",
+      "Users can subscribe to newsletters for updates, offers, and coffee-related content.",
+      "Design a visually appealing and intuitive interface that reflects the warmth and richness of coffee culture.",
+      "Ensure the website offers an engaging and seamless user experience.",
+      "Highlight key features like the blog, resource library, and community hub."
     ],
     challenges: [
-      "Reconciling cart state after long offline periods",
-      "Meeting PCI constraints while keeping the bundle small",
+      "Balancing content density with clean aesthetics.",
+      "Ensuring consistency across mobile and desktop designs.",
     ],
     outcomes: [
       "Mobile conversion up 22% within the first month",
-      "PWA installs on 15% of returning sessions",
-      "Lighthouse PWA + Performance both 95+",
+      "High-fidelity UI designs for the homepage, blog, resource library, and community hub.",
+      "A consistent design system including typography, color palette, and reusable components.",
+      "Increased session duration by 40% (post-launch analysis).",
+      "Reduced bounce rate from 55% to 35%."
     ],
-    stack: ["Next.js", "React", "Stripe", "Workbox", "TypeScript"],
-    demo: "#",
-    userStory : {
-      heading: 'UI Development User Stories',
+    stack: ["Magento", "HTML", "CSS", "PHP", "MySql"],
+    demo: "https://lovers.coffee/",
+    thumbnail: loversCoffee,
+    userStory : [
+      {
+      heading: 'Research & Discovery',
       userStories: [
         {
-          section: 'Onboarding UI',
-          description1:
-            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
-          criteria: 'UI Acceptance Criteria',
+          section: 'Target Audience:',
+          description1: '',
+          criteria: '',
           criteriaList: [
-            'Use Polaris Page + Card + FormLayout',
-            'Step-based UI (Stepper / Progress indicator)',
-            'Clear CTA buttons (Primary / Secondary)',
-            'Inline validation with error messages',
-            'Loading state during API calls (Spinner / Skeleton)',
-            'Success & error banners (Polaris Banner component)',
+            'Primary: Coffee enthusiasts (ages 20-45) who are curious about brewing techniques, coffee origins, and trends.',
+            'Secondary: Baristas, coffee shop owners, and industry professionals.',
           ],
         },
         {
-          section: 'Onboarding UI1',
+          section: 'Competitor Analysis:',
           description1:
-            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
-          criteria: 'UI Acceptance Criteria',
+            'I analyzed similar platforms such as CoffeeGeek and Perfect Daily Grind to identify trends and pain points. Observations included:',
+          criteria: '',
           criteriaList: [
-            'Use Polaris Page + Card + FormLayout',
-            'Step-based UI (Stepper / Progress indicator)',
-            'Clear CTA buttons (Primary / Secondary)',
-            'Inline validation with error messages',
-            'Loading state during API calls (Spinner / Skeleton)',
-            'Success & error banners (Polaris Banner component)',
+            'A lack of cohesive design elements in most competitors.',
+            'Overwhelming information density without clear navigation.',
+          ],
+        },
+        {
+          section: 'Challenges Identified:',
+          description1: '',
+          criteria: '',
+          criteriaList: [
+            'Balancing a content-rich website with a clean, uncluttered design.',
+            'Creating a visual identity that stands out while feeling warm and inviting.',
+            "Optimizing navigation to ensure users can easily find information."
           ],
         },
       ],
-    }
+      },
+      {
+        heading: ' Design Process',
+        userStories: [
+          {
+            section: 'Moodboard & Inspiration:',
+            description1: 'I created a moodboard to capture the essence of coffee culture: earthy tones, warm textures, and a cozy ambiance. Keywords: warmth, sophistication, and simplicity.',
+            criteria: '',
+            criteriaList: [
+              'Planning on requirement board',
+              'Secondary: Baristas, coffee shop owners, and industry professionals.',
+            ],
+          },
+          {
+            section: 'Wireframing',
+            description1:
+              'Low-fidelity wireframes were created to outline the layout and structure:',
+            criteria: '',
+            criteriaList: [
+              'Focus on intuitive navigation with clear pathways to the blog, resources, and community sections.',
+              'Prioritized the homepage as the central storytelling piece.',
+            ],
+          },
+          {
+            section: 'Color Palette:',
+            description1: '',
+            criteria: '',
+            criteriaList: [
+              'Primary Colors: Shades of brown and beige to evoke coffee’s richness.',
+              'Accent Colors: Subtle greens and warm whites for contrast and freshness.',
+            ],
+          },
+          {
+            section: 'Typography:',
+            description1: '',
+            criteria: '',
+            criteriaList: [
+              'Used serif fonts for headers to convey sophistication.',
+              'Paired with sans-serif fonts for body text for readability.',
+            ],
+          },
+          {
+            section: 'UI Components:',
+            description1: '',
+            criteria: '',
+            criteriaList: [
+              'Navigation Bar: Sticky menu for easy access to all sections.',
+              'Hero Section: A bold introduction with a featured image of coffee brewing.',
+              "Cards: Modular cards for blog previews and resource highlights."
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Visual Design Highlights',
+        userStories: [
+          {
+            section: 'Homepage:',
+            description1: '',
+            criteria: '',
+            criteriaList: [
+              'Designed a hero banner with an inviting tagline and a call-to-action button (“Explore Coffee Culture”).',
+              'Featured sections include “Top Blog Posts,” “Latest Resources,” and “Join the Community.”',
+            ],
+          },
+          {
+            section: 'Wireframing',
+            description1:
+              'Low-fidelity wireframes were created to outline the layout and structure:',
+            criteria: '',
+            criteriaList: [
+              'Focus on intuitive navigation with clear pathways to the blog, resources, and community sections.',
+              'Prioritized the homepage as the central storytelling piece.',
+            ],
+          },
+          {
+            section: 'Blog Section:',
+            description1: '',
+            criteria: '',
+            criteriaList: [
+              'Created a card-based layout for easy scanning. Each card includes a title, preview text, and a featured image.',
+              'Accent Colors: Subtle greens and warm whites for contrast and freshness.',
+            ],
+          },
+          {
+            section: 'Resource Library:',
+            description1: '',
+            criteria: '',
+            criteriaList: [
+              'Implemented a filterable grid for guides, tools, and tutorials.',
+              'Designed icons to represent categories (e.g., brewing, beans, equipment).',
+            ],
+          },
+          {
+            section: 'Community Hub:',
+            description1: '',
+            criteria: '',
+            criteriaList: [
+              'Highlighted user stories and community events in a carousel format.',
+              'Integrated an easy sign-up process for the community newsletter.',
+            ],
+          },
+        ],
+      }
+    ]
   },
   {
-    slug: "marketing-site-platform",
-    title: "Marketing Site Platform",
+    slug: "Giglancer",
+    title: "Giglancer",
     initials: "MS",
     year: "2022",
     role: "Frontend Architect",
     client: "Growth-stage B2B SaaS",
     category: "Marketing",
     summary:
-      "Content-driven marketing site with CMS pages, A/B testing, and a visual editor for marketers.",
+      "Giglancer is a platform where users can book bands, find musicians, or post gigs. It connects clients with talented musicians for their projects.",
     description:
-      "Built a Next.js marketing platform powered by a headless CMS, with a visual editor that lets non-technical marketers assemble pages from a library of blocks — and A/B test everything.",
+      "Giglancer is a comprehensive digital platform designed to bridge the gap between talented musicians and individuals or businesses seeking high-quality musical services. Whether someone is planning a live event, producing a music project, or looking to collaborate creatively, Giglancer provides a seamless and efficient way to discover, connect, and work with professional artists across various genres and skill levels.",
     features: [
-      "Visual block-based editor synced with Sanity",
-      "A/B testing framework tied to analytics events",
+      "Design an intuitive and easy-to-navigate platform that allows clients and musicians to interact effortlessly, reducing friction in discovering, booking, and managing gigs.",
+      "Provide advanced search, filtering, and recommendation systems to help clients quickly find the right musicians based on genre, location, budget, and experience.",
+      "Streamline the process of posting gigs, sending proposals, and hiring talent with clear workflows, ensuring a fast and hassle-free experience for both parties.",
+      "Implement secure payments, verified profiles, and review/rating systems to foster credibility, reliability, and long-term relationships between clients and musicians.",
+      "Offer tools for musicians to showcase their work, gain visibility, and access consistent opportunities, helping them build sustainable careers in the music industry.",
       "Per-locale content with ISR",
       "Type-safe content schema generated from CMS",
     ],
     challenges: [
       "Letting marketers compose pages without producing messy HTML",
       "Keeping page builds fast as content volume grew",
+      "Designing an easy-to-use dual-dashboard system.",
+      "Ensuring smooth communication between clients and artists."
     ],
     outcomes: [
       "Marketing now ships pages without engineering involvement",
       "Landing page test velocity up 4×",
       "Average page weight down 35%",
+      "Deliverables: High-fidelity UI designs, branding elements, and dashboards.",
+      "Next Steps: Implement personalized recommendations and analytics features."
     ],
-    stack: ["Next.js", "Sanity", "TypeScript", "Tailwind"],
-    demo: "#",
-    code: "https://github.com/arkumar3c",
-    userStory : {
-      heading: 'UI Development User Stories',
+    stack: ["React", "HTML", "TypeScript", "CSS"],
+    demo: "https://dev.giglancer.com/",
+    code: "#",
+    thumbnail: gig,
+    userStory : [{
+      heading: 'Research & Discovery',
       userStories: [
         {
-          section: 'Onboarding UI',
+          section: 'Target Audience:',
           description1:
-            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
+            'Giglancer is designed to serve a diverse yet focused group of users who are connected through a shared interest in music, events, and creative collaboration. The platform primarily targets both clients seeking musical talent and musicians looking for opportunities.',
           criteria: 'UI Acceptance Criteria',
           criteriaList: [
-            'Use Polaris Page + Card + FormLayout',
-            'Step-based UI (Stepper / Progress indicator)',
+            'Primary: Event organizers, music producers, band managers.',
+            'Secondary: Independent musicians seeking gigs.',
             'Clear CTA buttons (Primary / Secondary)',
             'Inline validation with error messages',
             'Loading state during API calls (Spinner / Skeleton)',
@@ -532,21 +904,30 @@ export const PROJECTS: Project[] = [
           ],
         },
         {
-          section: 'Onboarding UI1',
-          description1:
-            'As a merchant, I want a clean and guided onboarding interface so that I can easily connect my store with TikTok without confusion.',
-          criteria: 'UI Acceptance Criteria',
+          section: 'Design Process',
+          description1: '',
+          criteria: '',
           criteriaList: [
-            'Use Polaris Page + Card + FormLayout',
-            'Step-based UI (Stepper / Progress indicator)',
-            'Clear CTA buttons (Primary / Secondary)',
-            'Inline validation with error messages',
+            'User Flow: Created dashboards for clients and musicians.',
+            'Wireframing: Focused on intuitive UI for talent discovery and project posting.',
+            'Talent Panel: Profile improvement, gig discovery, invoicing, chat system.',
+            'Client Panel: Job postings, musician discovery, team collaboration, chat system.',
             'Loading state during API calls (Spinner / Skeleton)',
             'Success & error banners (Polaris Banner component)',
+          ],
+        },
+        {
+          section: 'Visual Design Highlights',
+          description1: '',
+          criteria: '',
+          criteriaList: [
+            'Homepage: Showcases musician profiles and gig opportunities.',
+            'Talent Dashboard: Profile enhancement, saved opportunities, messaging system.',
+            'Client Dashboard: Easy job postings, and team collaboration tools.',
           ],
         },
       ],
-    }
+    }]
   },
 ];
 
@@ -628,6 +1009,29 @@ export const SERVICES: Service[] = [
     icon: "◫",
   },
 ];
+
+export interface Recommendation {
+  quote: string;
+  name: string;
+  role: string;
+  relationship: string;
+  date: string;
+  linkedinUrl: string;
+  initials: string;
+  imageUrl: string;
+}
+
+export const MANAGER_RECOMMENDATION: Recommendation = {
+  quote:
+    "<p> I've had the opportunity to work closely with Arvind, and he has been a critical part of ensuring the quality and consistency of our frontend execution.</p><p>He brings a strong command over frontend technologies along with a sharp eye for pixel perfection. What stands out is his ability to translate design intent into production with a high degree of accuracy, without compromising on performance or scalability.</p><p>Arvind played a key role in building and publishing our design system, OUNCE, and was instrumental in ensuring its adoption across projects. In many ways, no product shipped without his contribution, either through direct implementation or by raising the bar on quality.</p><p>He consistently reviewed both design and code across the frontend team, maintaining strict control over production quality. This not only improved consistency but also helped establish a strong standard for execution across the board.</p><p>He also ensured that all applications were robust across viewports, taking ownership of responsive behavior and making sure experiences held up across devices.</p><p>Beyond individual contribution, Arvind led a dedicated team focused on design systems and UI development, driving alignment between design and engineering and enabling teams to build faster without compromising quality.</p><p>Overall, he is someone who combines technical depth, design sensitivity, and a strong sense of ownership, making him a dependable force in delivering high-quality frontend experiences.</p>",
+  name: "Jaikant Singh",
+  role: "Senior Design Manager @ThreeColts",
+  relationship: "Managed me directly",
+  imageUrl: jaikant,
+  date: "March 2015 - till now",
+  linkedinUrl: "https://www.linkedin.com/in/jai-kant-singh",
+  initials: "MN",
+};
 
 export const TESTIMONIALS: Testimonial[] = [
   {

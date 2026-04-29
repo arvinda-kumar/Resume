@@ -1,7 +1,7 @@
 import React from "react";
 import { HIGHLIGHTS, PROFILE, STACK_TAGS } from "../data/content";
 import { useReveal } from "../hooks/useReveal";
-import profileImage from '../../assets/imgs/profile-photo.jpeg'
+import profileImage from '../../assets/imgs/profile-photo.png'
 
 const CheckIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

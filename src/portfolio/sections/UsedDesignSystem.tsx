@@ -1,17 +1,24 @@
 import React from "react";
 import { useReveal } from "../hooks/useReveal";
 
+import antui from '../../assets/imgs/design-system/ant.png';
+import mui from '../../assets/imgs/design-system/mui.png';
+import ounceui from '../../assets/imgs/design-system/ounce.png'
+import polarisui from '../../assets/imgs/design-system/polaris.png'
+import sadcnui from '../../assets/imgs/design-system/sadcn.png'
+
 interface Tech {
   name: string;
   slug: string;
+  imgUrl: string;
 }
 
 const TECHS: Tech[] = [
-  { name: "Ant Design", slug: "Ant Design" },
-  { name: "Material UI (MUI)", slug: "material ui" },
-  { name: "shadcn/ui", slug: "shadcn/ui" },
-  { name: "Polaris", slug: "polaris" },
-  { name: "Ounce", slug: "ounce" },
+  { name: "Ant Design", slug: "Ant Design", imgUrl: antui },
+  { name: "Material UI (MUI)", slug: "material ui", imgUrl: mui },
+  { name: "shadcn/ui", slug: "shadcn/ui", imgUrl: sadcnui },
+  { name: "Polaris", slug: "polaris", imgUrl: polarisui },
+  { name: "Ounce", slug: "ounce", imgUrl: ounceui },
 
 ];
 
@@ -25,16 +32,13 @@ const SystemCard: React.FC<{ tech: Tech; idx: number }> = ({ tech, idx }) => {
       title={tech.name}
     >
       <span
-        className="pf-tech-card__ico"
+        className="pf-ui-card__ico"
         aria-hidden="true"
-        style={
-          {
-            WebkitMaskImage: url,
-            maskImage: url,
-          } as React.CSSProperties
-        }
-      />
-      <span className="pf-tech-card__name">{tech.name}</span>
+       
+      >
+        <img src={tech.imgUrl} alt={tech.name} />
+      </span>
+      
     </div>
   );
 };
