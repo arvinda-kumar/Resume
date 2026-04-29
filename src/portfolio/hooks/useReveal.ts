@@ -5,6 +5,7 @@ export const useReveal = <T extends HTMLElement = HTMLDivElement>(
 ) => {
   const ref = useRef<T | null>(null);
 
+  
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
